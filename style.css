@@ -1,0 +1,180 @@
+/* Variables de Marca UAC */
+:root {
+    --uac-blue: #003366;
+    --uac-gold: #FFD700;
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+    --white: #ffffff;
+}
+
+/* Configuración del Cuerpo */
+body {
+    background-color: #e2e8f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Contenedor tipo Celular */
+.app-container {
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    background-color: var(--bg-light);
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow-x: hidden;
+}
+
+/* Diseño del Header (Encabezado) */
+.uac-header {
+    background-color: var(--uac-blue);
+    color: var(--white);
+    padding: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    background: rgba(255,255,255,0.2);
+    padding: 10px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+}
+
+.brand-text h1 {
+    font-weight: 900;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.8;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #4ade80;
+    border-radius: 50%;
+}
+
+.status-indicator p {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+}
+
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+/* Navegación Inferior (Bottom Nav) */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0 25px 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #94a3b8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-item.active {
+    color: var(--uac-blue);
+}
+
+.nav-item i {
+    font-size: 1.4rem;
+}
+
+.nav-item span {
+    font-size: 10px;
+    font-weight: 800;
+    margin-top: 4px;
+}
+
+/* Sistema de Notificaciones */
+.notification {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #16a34a;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    transition: top 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.notification.show {
+    top: 20px;
+}
+
+/* Tarjetas del RecyclerView */
+.item-card {
+    background: white;
+    border-radius: 24px;
+    padding: 15px;
+    margin-bottom: 16px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.item-card:active {
+    transform: scale(0.98);
+}
+
+/* Animaciones */
+.view-transition {
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
